@@ -1,0 +1,269 @@
+/* Estilos generales */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Header */
+
+header {
+  background-color: #e8c57e;
+}
+
+header #btn_menu,
+header label,
+.logo {
+  display: none;
+}
+
+header nav img {
+  width: 150px;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  padding: 15px 20px;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+/* Main */
+
+/* Sección banner */
+.banner {
+  height: 450px;
+  background-image: url(./../assets/tea-banner.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .text {
+  color: black;
+  font-size: 45px;
+  text-shadow: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .text a {
+  text-decoration: none;
+  color: black;
+  background-color: #e8c57e;
+  border-radius: 15px;
+  font-size: 18px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+}
+
+.banner .text a img {
+  width: 18px;
+  padding-left: 5px;
+}
+
+/* Sección nosotros */
+
+.nosotros {
+  display: flex;
+  margin: 50px 40px;
+  justify-content: space-around;
+  column-gap: 30px;
+}
+
+.nosotros div {
+  width: 400px;
+}
+
+.nosotros div img {
+  width: 100%;
+  height: 100%;
+}
+
+.nosotros-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.nosotros-text h2 {
+  font-size: 40px;
+}
+
+.nosotros-text p {
+  font-size: 25px;
+}
+
+/* Footer */
+footer {
+  background-color: #e8c57e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+footer div img {
+  width: 30px;
+}
+
+/* Media query de Tablet */
+@media (max-width: 1024px) {
+}
+
+/* Media query de Mobile */
+@media (max-width: 768px) {
+  .nosotros {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nosotros div {
+    width: 80vw;
+  }
+
+  /* Header */
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header .logo {
+    display: block;
+    width: 100px;
+    margin-left: 25px;
+  }
+
+  header label {
+    display: block;
+    position: relative;
+    right: 25px;
+  }
+
+  header label img {
+    width: 50px;
+  }
+
+  .menu {
+    position: absolute;
+    top: 50px;
+    background-color: #e8c57e;
+    width: 100%;
+    visibility: hidden;
+    transition: visibility 1s, opacity 1s ease;
+    opacity: 0;
+  }
+
+  #btn_menu:checked ~ .menu {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .menu ul {
+    flex-direction: column;
+  }
+
+  .logo-hidden {
+    display: none;
+  }
+}
+
+/* Form */
+
+.myForm {
+  display: grid;
+  grid-template-columns: [labels] auto [controls] 1fr;
+  grid-auto-flow: row;
+  grid-gap: 0.8em;
+  background: #eee;
+  padding: 1.2em;
+}
+.myForm > label {
+  grid-column: labels;
+  grid-row: auto;
+}
+.myForm > input,
+.myForm > textarea,
+.myForm > button {
+  grid-column: controls;
+  grid-row: auto;
+  border: none;
+  padding: 1em;
+}
+
+/* Carousel */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.wrapper {
+  overflow: hidden;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-gap: 10px;
+}
+
+.gallery {
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.gallery__img {
+  scroll-snap-align: start;
+  margin-bottom: 10px;
+  min-height: 100vh;
+  object-fit: cover;
+}
+
+.lil-nav {
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  a {
+    height: 200px;
+    display: flex;
+    margin-bottom: 10px;
+  }
+}
+
+.lil-nav__img {
+  object-fit: cover;
+  filter: saturate(0);
+  transition: 0.3s ease all;
+
+  &:hover {
+    transform: scale(1.05);
+    filter: saturate(1);
+  }
+}
